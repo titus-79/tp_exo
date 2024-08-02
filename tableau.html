@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let tableau =["rhum", "lait", "farine", "sucre", "beurre", "oeuf", "huile"];
+
+//         Créer une fonction "getMax()' qui prend un tableau d'entiers en paramètres et qui retourne l'entier le plus grand
+
+
+      
+
+        //           Créer un tableau de 10 entiers aléatoires compris entre 1 et 100 et l'utiliser pour tester la fonction
+
+
+        let tab = [];
+       
+
+        for (let i = 0; i < 10; i++) {
+            let nb = getRandomIntInclusive(1, 100);
+            tab.push(nb);  
+        }
+    
+        function getRandomIntInclusive(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    console.log(tab);
+  
+    
+    
+        // function getMax() {
+                // return Math.max.apply(null, tab);
+
+            // }
+        function getMax(tab) {
+            let max = tab[0];
+
+            for (let i = 1; i < tab.length; i++) {
+                if (tab[i] > max) {
+                    max = tab[i];
+                }
+            }
+
+            return max;
+        }
+
+  console.log(getMax(tab));
+
+        function average(tab) {
+            let moy = 0;
+
+            for (let i = 0; i < tab.length; i++) {
+                moy = tab[i] + moy;
+            }
+
+            return moy/tab.length;
+
+        }
+    
+    console.log(average(tab));
+
+    function getMin(tab) {
+            let min = tab[0];
+
+            for (let i = 1; i < tab.length; i++) {
+                if (tab[i] < min) {
+                    min = tab[i];
+                }
+            }
+
+            return min;
+        }
+
+  console.log(getMin(tab));
+
+    //           Dans le même esprit, créer la fonction "average" qui retourne la moyenne des valeurs du tableau et une fonction "getMin" qui retourne le minimum.
+
+
+    </script>
+</body>
+</html>
