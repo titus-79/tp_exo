@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let tab =[];
+        // let max =parseInt(window.prompt("Nombre d'entrées :"));
+        // tab.length = max;
+        
+        // for (let i = 0; i < tab.length ; i++) {
+
+        //     // let data = window.prompt("Entrez vos données :");
+        //     // tab [i] = data;
+        //     tab [i] = parseInt(window.prompt("Entrez vos données :"));
+        // }
+
+        let tab =[];
+        tab.length = 3;
+        for (let i = 0; i < tab.length; i++) {
+            tab[i] = Math.floor(Math.random() * 100 + 1);
+        }
+
+
+        function reverse(tab) {
+            console.log(tab.length);
+            // let temp = null;
+            let tabreverse = [];
+            tabreverse.length = tab.length;
+            let j = 0;
+            for (let i = tab.length-1 ; i >= 0 ; i--) {
+                tabreverse [j] = tab[i];
+                j++;
+            }
+
+            return tabreverse;
+
+        }
+
+        let reverseTab = reverse(tab);
+        console.log(reverseTab);
+
+
+        console.log (tab);
+        console.log (reverse(tab));
+    </script>
+</body>
+</html>

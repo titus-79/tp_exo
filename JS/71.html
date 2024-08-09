@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.1</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let nb;
+    
+
+        while (nb !== 0) {
+            nb = parseInt(window.prompt("Entrez une valeur, 0 pour arreter."));
+            
+                if (nb > 0) {
+                    array.push(nb)
+                    for (let i = 0; i < array.length; i++){
+                        if (nb < array[i]) {
+                            array.splice(i, 0, nb);
+                            array.pop();
+                            break;
+                        }
+                    }
+                } else if (nb < 0) {
+                    alert ( "Entrez une valeur positive !");
+                }
+                
+            }
+            
+        
+     
+        function isConsecutif(tab) {
+            let i = 0;         
+                       
+            if (tab[i] + 1 !== tab[i + 1]) {
+                return false;
+            } else {
+                i++
+                return true;
+            }
+            
+        }
+
+        if (isConsecutif(array)) {
+        alert("Ses éléments sont tous consécutifs.");
+    } else {
+        alert("Ses éléments ne sont pas tous consécutifs.");
+    }
+
+            
+        
+
+
+    </script>
+</body>
+</html>

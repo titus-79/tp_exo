@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.2</title>
+</head>
+<body>
+    <script>
+        let tab = [];
+        tab.length = 100;
+        for (let i = 0; i < tab.length; i++) {
+            tab[i] = Math.round(Math.random() * 1000);
+        }
+        // console.log("tableau : " + tab);
+        // let count = 0;
+
+        
+        function triParInsertion(tableau) {
+            for (let i = 1; i < tableau.length; i++) {
+
+                let j = i - 1
+            
+                while (tableau[i] > tableau[j] && j >= 0){
+                    j++;
+                    // console.log("j = " + j);
+                } 
+                tableau.splice(j,0,tableau[i]);
+                // console.log("tbleau i = " + tableau[i+1]);
+                tableau.splice(i,1);
+            
+                // console.log(tableau)
+                // count++
+                }
+
+                return tableau;
+            
+            }
+        console.log (triParInsertion(tab))
+
+        
+        function selectionBulle(tableau) {
+
+
+            for (let i = 0; i < tableau.length; i++) {
+
+
+                if (tableau[i] > tableau[i + 1]) {
+                    let temp = tableau[i];
+                    tableau[i] = tableau[i + 1];
+                    tableau[i + 1] = temp;
+
+                    // count++;
+
+                    // console.log(tableau);
+
+                }
+            }
+
+            return tableau;
+
+        }
+
+        function tableauTrie(tableau) {
+        for (let i = 0; i < tableau.length; i++) {
+            if (tableau[i] > tableau[i + 1]) {
+                selectionBulle(tableau)
+            }
+
+        }
+
+        return tableau
+        }
+        console.log (tableauTrie(tab))
+    
+    </script>
+    
+</body>
+</html>

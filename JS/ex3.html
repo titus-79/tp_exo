@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tab = [];
+        tab.length = 10;
+
+        for (i = 0; i < tab.length; i++ ) {
+            tab[i] = Math.floor(Math.random()*10);         
+        }
+
+        function present(tableau, valeur) {
+            let result = false;
+            for (let i = 0; i < tableau.length; i++) {
+                if(tableau[i] === valeur){
+                    result = true;
+                }                
+            }
+            return result;
+
+        }
+
+        let tabOne = [];
+/*copie les elements de tab si cette element n'exixte pas dans tabOne */
+        for (let i = 0; i < tab.length; i++) {
+            if (!present(tabOne, tab[i])) {
+                tabOne.push(tab[i]);
+            }
+
+
+        }
+        console.log(tab);
+        console.log(tabOne);
+
+
+        // console.log(tab);
+
+        // let tabOne = tab;
+        // let temp = 0;
+        // tabOne = [1,3,2,1,2,5,5];
+
+        // function onlyOne(tabOne){
+        //     for(i = 0; i < tabOne.length; i++ ){
+        //     temp = tabOne[i];
+        //     let found = false;
+        //             console.log(tabOne.length);
+        //             console.log(i);
+        //         for(j = 0; j < tabOne.length; j++ ) {
+                   
+        //             if(temp === tabOne[j]) {
+        //                 if (found) {
+        //                 tabOne.shift(j--);
+        //                 } else {
+        //                     found = true;
+        //                 }
+        //             }
+        //         }
+        //     }
+
+        //     return tabOne;
+        // }
+
+        // console.log(onlyOne(tabOne));
+
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nb = Math.round(Math.random()*100);
+        console.log(nb);
+        let entre = null;
+        // console.log(entre);
+        let count = 0;
+
+        do{
+            entre = parseInt(window.prompt("devinez un chiffre entre 1 et 100 :"));
+            count ++;
+            if (nb > entre) {
+                alert("Trop petit");
+              
+            } else if (nb < entre) {
+                alert("Trop grand");
+                // entre = parseInt(window.prompt("devinez un chiffre entre 1 et 100 :"));
+                // count ++;
+            }
+
+            // entre = parseInt(window.prompt("devinez un chiffre entre 1 et 100 :"));
+                
+         }  while (nb < entre || nb > entre);
+
+
+         alert("Bravo ! Vous avez trouvé en " + count + " essais");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.8</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(window.prompt("Entrez le nombre de valeur : "));
+        let array = [];
+        let neg = 0;
+        let pos = 0;
+
+        for(let i = 0;i < n ; i++) {
+            let nb = parseInt(window.prompt("Entrez une valeur : "));
+            array.push(nb);
+            if (nb < 0) {
+                neg++;
+            } else if (nb > 0) {
+                pos++;
+            }
+        
+        }
+
+        alert("Il y a " + neg + " de valeur negative, et " + pos + " de valeur positive.")
+    </script>
+</body>
+</html>
