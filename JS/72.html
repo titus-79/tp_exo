@@ -8,35 +8,42 @@
 <body>
     <script>
         let tab = [];
-        tab.length = 100;
+        tab.length = 10;
         for (let i = 0; i < tab.length; i++) {
             tab[i] = Math.round(Math.random() * 1000);
         }
-        // console.log("tableau : " + tab);
+        console.log("tableau : " + tab);
         // let count = 0;
+        // let tab = [1, 2, 4, 3, 6, 5]
 
         
         function triParInsertion(tableau) {
             for (let i = 1; i < tableau.length; i++) {
 
-                let j = i - 1
+                let j = i - 1;
+                // console.log("for tbleau i = " + tableau[i]);
+                // console.log(tableau);
             
                 while (tableau[i] > tableau[j] && j >= 0){
-                    j++;
+                    j--;
                     // console.log("j = " + j);
-                } 
-                tableau.splice(j,0,tableau[i]);
-                // console.log("tbleau i = " + tableau[i+1]);
-                tableau.splice(i,1);
+                }
+                // console.log("tbleau i = " + tableau[i]); 
+                // console.log(tableau);
+                tableau.splice(j + 1,0,tableau[i]);
+                // console.log("splicej + 1 :" + (j + 1) +", 0, tbleau i = " + tableau[i]);
+                // console.log(tableau);
+                // console.log("splicei + 1 :" + (i + 1)) ;
+                tableau.splice(i + 1,1);
             
-                // console.log(tableau)
-                // count++
+                // console.log(tableau);
+                // // count++
                 }
 
                 return tableau;
             
             }
-        console.log (triParInsertion(tab))
+        console.log ("Tri par Insertion     : " + triParInsertion(tab));
 
         
         function selectionBulle(tableau) {
@@ -45,10 +52,13 @@
             for (let i = 0; i < tableau.length; i++) {
 
 
-                if (tableau[i] > tableau[i + 1]) {
-                    let temp = tableau[i];
-                    tableau[i] = tableau[i + 1];
-                    tableau[i + 1] = temp;
+                if (tableau[i] < tableau[i + 1]) {
+                    tableau.splice( i, 0, i + 1);
+                    tableau.splice( i + 1, 1 );
+
+                    // let temp = tableau[i];
+                    // tableau[i] = tableau[i + 1];
+                    // tableau[i + 1] = temp;
 
                     // count++;
 
@@ -63,15 +73,15 @@
 
         function tableauTrie(tableau) {
         for (let i = 0; i < tableau.length; i++) {
-            if (tableau[i] > tableau[i + 1]) {
-                selectionBulle(tableau)
+            if (tableau[i] < tableau[i + 1]) {
+                selectionBulle(tableau);
             }
 
         }
 
-        return tableau
+        return tableau;
         }
-        console.log (tableauTrie(tab))
+        console.log ("Tri selection à Bulle : " + tableauTrie(tab));
     
     </script>
     

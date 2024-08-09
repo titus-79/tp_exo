@@ -15,7 +15,7 @@
             nb = parseInt(window.prompt("Entrez une valeur, 0 pour arreter."));
             
                 if (nb > 0) {
-                    array.push(nb)
+                    array.push(nb);
                     for (let i = 0; i < array.length; i++){
                         if (nb < array[i]) {
                             array.splice(i, 0, nb);
@@ -37,7 +37,7 @@
             if (tab[i] + 1 !== tab[i + 1]) {
                 return false;
             } else {
-                i++
+                i++;
                 return true;
             }
             
