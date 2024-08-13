@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.7</title>
+</head>
+<body>
+    <script>
+        
+        let l = parseInt(window.prompt("Sur quelle ligne ce trouve le pion ?"));
+        let c = parseInt(window.prompt("Sur quelle colonne ce trouve le pion ?"));
+        
+        let damier = [];
+        
+        for (let i = 0 ; i < 8; i++) {
+            let ligne = [];
+            
+            for (let j = 0; j < 8; j++) {
+                ligne.push("O");
+            }
+            damier.push(ligne);
+        }
+        
+        l = l - 1;
+        c = c - 1;
+        
+        damier[l][c] = "X";
+        
+        let isDamierOut = false;
+
+        function displayDamier() {
+            console.table(damier);
+            // alert(damier);
+            // alert(damier[0], damier[1], damier[2], damier[3], damier[4], damier[5], damier[6], damier[7]);
+        //     console.log(damier[0]);
+        //     console.log(damier[1]);
+        //     console.log(damier[2]);
+        //     console.log(damier[3]);
+        //     console.log(damier[4]);
+        //     console.log(damier[5]);
+        //     console.log(damier[6]);
+        //     console.log(damier[7]);
+        }
+
+        function positionPion(x, y){
+            // let isDamierOut = false;
+            if (x < 0 || x > 7 || y < 0 || y > 7) {
+                    alert("le pion est sorti, Game Over !");
+                    return true;
+
+            } else {
+                damier[x][y] = "X";
+                displayDamier();
+                return false;
+            }
+        }
+        
+        do {
+            let m = parseInt(window.prompt("Quelle mouvement voulez vous effectuer ? 0 en haut à gauche, 1 en haut à droite, 2 en bas à gauche, 3 en bas à droite."));
+            
+            damier[l][c] = "O";
+            switch (m) {
+                case 0:
+                    l = l - 1;
+                    c = c - 1;
+                    isDamierOut = positionPion(l, c);
+                    break;
+                case 1:
+                    l = l - 1;
+                    c = c + 1;
+                    isDamierOut = positionPion(l, c);
+                    break;
+                case 2:
+                    l = l + 1;
+                    c = c - 1;
+                    isDamierOut = positionPion(l, c);
+                    break;
+                case 3:
+                    l = l + 1;
+                    c = c + 1;
+                    isDamierOut = positionPion(l, c);
+                    break;
+                default:
+                    alert("Entrez une valeur entre 0 et 3");
+
+                }
+               
+        }while (!isDamierOut);
+
+    </script>
+</body>
+</html>
