@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exercice4</title>
 </head>
 <body>
     <script>
-        function nbVoyelles( ) {}
+        let chaineDeCaractere = "Voiçi une chaine de caractère avec des voyelles et des consonnes.";
+        function nbVoyelles(phrase) {
+            let count = 0;
+            let voyelle = "aeiouyAEIOUY";
+
+            for (let i = 0; i < phrase.length; i++) {
+                
+                if (voyelle.indexOf(phrase.charAt(i)) !== -1) {
+                count++;
+            }
+            }
+            return count;
+        }
+        console.log(nbVoyelles(chaineDeCaractere));
     </script>
 </body>
 </html>

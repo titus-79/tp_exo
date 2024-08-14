@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice5</title>
+</head>
+<body>
+    <script>
+        let chaineDeCaractere = "Voiçi une chaine de caractère avec des mots de différentes longeur.";
+
+        function motLePlusLong(phrase) {
+            let mot = phrase.split(" ");
+            let max = "";
+
+            for (let i = 0; i < mot.length; i++) {
+                if (mot[i].length > max.length) {
+                    max = mot[i];
+                }
+            }
+            return max;
+        }
+
+        console.log (motLePlusLong(chaineDeCaractere));
+
+    </script>
+    
+</body>
+</html>
