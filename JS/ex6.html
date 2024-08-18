@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice6</title>
+</head>
+<body>
+    <script>
+        let chaine1 = window.prompt("Entrez la premiere chaine de caractere :");
+        let chaine2 = window.prompt("Entrez la deuxiéme chaine de caractere :");
+
+        function isAnagrammes(string1, string2) {
+            string1 = (string1.replace(/\s+/g, '')).toLowerCase();
+            string2 = (string2.replace(/\s+/g, '')).toLowerCase();
+
+            if (string1.length !== string2.length) {
+                return false;
+            }
+
+            string1 = string1.split("").sort().join();
+            string2 = string2.split("").sort().join();
+
+            if (string1 !== string2) {
+                return false;
+            } else {
+                return true
+            }
+
+        }
+
+        if (isAnagrammes (chaine1, chaine2) ) {
+            alert ("Les 2 chaines sont des anagrammes !")
+        } else {
+            alert ("Les 2 chaines ne sont pas des anagrammes !!")
+        }
+        
+    </script>
+</body>
+</html>
