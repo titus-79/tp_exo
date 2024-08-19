@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.4</title>
+</head>
+<body>
+    <script>
+        let chaineDeCaractere = window.prompt("Entrez une phrase :");
+        
+        let count1 = 0;
+
+        for(let i = 0; i < chaineDeCaractere.length; i++) {
+            switch(chaineDeCaractere[i]){
+                case "a":
+                    count1++;
+                    break;
+                case "e":
+                    count1++;
+                    break;
+                case "i":
+                    count1++;
+                    break;
+                case "o":
+                    count1++;
+                    break;
+                case "u":
+                    count1++;
+                    break;
+                case "y":
+                    count1++;
+                    break;
+                case "A":
+                    count1++;
+                    break;
+                case "E":
+                    count1++;
+                    break;
+                case "I":
+                    count1++;
+                    break;
+                case "O":
+                    count1++;
+                    break;
+                case "U":
+                    count1++;
+                    break;
+                case "Y":
+                    count1++;
+                    break;
+                default:
+                    break;
+            }
+        }
+        console.log(count1 + " voyelles trouvé !")
+
+
+
+        function nbVoyelles(phrase) {
+            let count = 0;
+            let voyelle = "aeiouyAEIOUY";
+
+            for (let i = 0; i < phrase.length; i++) {
+                
+                if (voyelle.indexOf(phrase.charAt(i)) !== -1) {
+                count++;
+            }
+            }
+            return count;
+        }
+        console.log(nbVoyelles(chaineDeCaractere));
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let chaineDeCaractere = window.prompt("Entrez une phrase à crypter:");
+        let decalage = window.prompt("Entrez le decalage :");
+        if (decalage === 26) {
+            decalage = window.prompt("Entrez un nouveau decalage :");
+        } else if (decalage > 26) {
+            decalage = Number(decalage)%26
+        }
+
+        let chaineCrypter = "";
+        for(let i = 0; i < chaineDeCaractere.length; i++) {
+            let cryptor = chaineDeCaractere[i].charCodeAt();
+            console.log(cryptor);
+            // if (cryptor === 90) {
+            //     cryptor = 65;
+            // } else if (cryptor === 122) {
+            //     cryptor = 97;
+            // } else {
+            //     cryptor++;
+            // }
+            if (cryptor >= 97 && cryptor >= 122) {
+
+            }else if(cryptor >= 65 && cryptor <= 90 ) {
+
+            }
+            chaineCrypter += String.fromCharCode(cryptor);
+            cryptor = Number(cryptor) + Number(decalage);
+            console.log(cryptor);
+            chaineCrypter += String.fromCharCode(cryptor);
+        }
+
+        console.log(chaineCrypter);
+        
+    </script>
+</body>
+</html>

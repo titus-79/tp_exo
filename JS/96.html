@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.6</title>
+</head>
+<body>
+    <script>
+        let chaineDeCaractere = window.prompt("Entrez une phrase à crypter:");
+        let chaineCrypter = "";
+        for(let i = 0; i < chaineDeCaractere.length; i++) {
+            let cryptor = chaineDeCaractere[i].charCodeAt();
+            console.log(cryptor);
+            if (cryptor === 90) {
+                cryptor = 65;
+            } else if (cryptor === 122) {
+                cryptor = 97;
+            } else {
+                cryptor++;
+            }
+            chaineCrypter += String.fromCharCode(cryptor);
+        }
+
+        console.log(chaineCrypter);
+        
+    </script>
+    
+</body>
+</html>

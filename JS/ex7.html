@@ -8,11 +8,38 @@
 <body>
     <script>
         let chaineDeCaractere = window.prompt("Entrez une phrase à convertir en camelCase :");
+        chaineDeCaractere = chaineDeCaractere.toLowerCase();
 
         function camelCaseConveriseur(phrase) {
-            phrase.replace(/\s+/g, '')
 
+            phrase = phrase.trim();
+            let camel = "";
+
+            for (let i = 0; i < phrase.length; i++) {
+                // console.log(phrase[i])
+                if (phrase[i] === " ") {
+                    camel += phrase.charAt(i + 1).toUpperCase()
+                    i++;
+                } else {
+                    camel += phrase[i];
+                }
+
+                // Equivalent à 
+                // if (phrase[i] === String.fromCharCode(32)) {
+                //     phrase.charAt(i + 1).toUpperCase();
+
+                // }
+
+                }
+            
+            return camel;
         }
+                    
+            // phrase.replace(/\s+/g, '');
+            // phrase.replace(/\s(([a-z])[a-zA-Z0-9]*)/gm, "$1".toUpperCase());
+
+
+        console.log (camelCaseConveriseur(chaineDeCaractere));
     </script>
 </body>
 </html>
