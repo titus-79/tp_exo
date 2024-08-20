@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.9bis</title>
+</head>
+<body>
+    <script>
+        let chaineDeCaractere = window.prompt("Entrez une phrase à décrypter:");
+        let cle = window.prompt("Entrez la clé en majuscule :");
+        let count = 0;        
+        let code = "";
+
+        for(let i = 0; i < chaineDeCaractere.length; i++) {
+            let cryptor = chaineDeCaractere[i].charCodeAt();
+            if (cryptor >= 97 && cryptor <= 122) {
+                cryptor = ((Number(cryptor) - 97 - (cle[count].charCodeAt() - 65)) + 26) % 26 + 97 ;
+            
+            }else if(cryptor >= 65 && cryptor <= 90 ) {
+                cryptor = ((Number(cryptor) - 65 - (cle[count].charCodeAt() - 65)) + 26) % 26 + 97 ;
+            
+            } else {
+                continue;
+            }
+            count++;
+            if (count >= cle.length) {
+                count = 0;
+            }
+            console.log (count);
+            console.log(cryptor);
+            code += String.fromCharCode(cryptor);
+            console.log (code);
+                
+            }
+        console.log (code);
+    </script>
+</body>
+</html>

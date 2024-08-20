@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.8</title>
+</head>
+<body>
+    <script>
+    let cle = ['H', 'Y', 'L', 'U', 'J', 'P', 'V', 'R', 'E', 'A', 'K', 'B', 'N', 'D', 'O', 'F', 'S', 'Q', 'Z', 'C', 'W', 'M', 'G', 'I', 'T'];
+    // let saisi;
+    // for (let i = 0; i < 26; i++) {
+    //     saisi = window.prompt("Entrez l'alphabet-clé :");
+    //     cle.push(saisi);
+    //     console.log(cle);
+    // }
+
+    let phrase = window.prompt("Entrez le message à coder:");
+    let code ="";
+
+    for (let i = 0; i < phrase.length; i++) {
+        let cryptor = phrase[i].charCodeAt()
+        if (cryptor >= 97 && cryptor <= 122) {
+            cryptor = (Number(cryptor) - 97 ) % 26 ;
+            
+        }else if(cryptor >= 65 && cryptor <= 90 ) {
+            cryptor = (Number(cryptor) - 65 ) % 26 ;
+            
+        } else {
+            continue;
+        }
+        code += cle[cryptor];
+    }
+
+    console.log(code)
+    </script>
+</body>
+</html>

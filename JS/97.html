@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>9.7</title>
 </head>
 <body>
     <script>
         let chaineDeCaractere = window.prompt("Entrez une phrase à crypter:");
         let decalage = window.prompt("Entrez le decalage :");
-        if (decalage === 26) {
+        if (decalage % 26 === 0) {
             decalage = window.prompt("Entrez un nouveau decalage :");
         } else if (decalage > 26) {
             decalage = Number(decalage)%26
@@ -26,13 +26,16 @@
             // } else {
             //     cryptor++;
             // }
-            if (cryptor >= 97 && cryptor >= 122) {
+            if (cryptor >= 97 && cryptor <= 122) {
+                cryptor = (Number(cryptor) - 97  + Number(decalage)) % 26 +97;
 
             }else if(cryptor >= 65 && cryptor <= 90 ) {
+                cryptor = (Number(cryptor) - 65  + Number(decalage)) % 26 +65;
 
+            } else {
+                continue;
             }
-            chaineCrypter += String.fromCharCode(cryptor);
-            cryptor = Number(cryptor) + Number(decalage);
+            
             console.log(cryptor);
             chaineCrypter += String.fromCharCode(cryptor);
         }
