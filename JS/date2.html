@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo4</title>
+</head>
+<body>
+    <script>
+        /*
+        Objectif : Calculer le nombre de jours restants avant une date donnée.
+
+        Créez une fonction daysUntil qui prend en paramètre une date future au format YYYY-MM-DD.
+        La fonction doit retourner le nombre de jours restants avant cette date.
+        Testez la fonction avec plusieurs dates, par exemple "2024-12-31" (Nouvel An), "2024-08-15" (une date proche), et une date passée pour vérifier le comportement.
+            
+        */
+        let input = window.prompt("Entrez une date YYYY-MM-DD :");
+
+        function daysUntil(date) {
+            date = new Date(date);
+            dateRef = new Date();
+
+            let days = date - dateRef;
+
+            days = Math.floor(days / 1000 / 60 / 60 /24); 
+
+            
+            return days;
+        }
+        if ( daysUntil(input) < 0) {
+            let days = daysUntil(input) * -1;
+            console.log("Cette date est passé de " + days + " jours.");
+        } else {
+            console.log("Il reste " + daysUntil(input) + " jours.");
+        }
+
+        // function daysUntil(eventDate) {
+        //     //eventDate => YYYY-MM-DD
+
+        //     eventDate = new Date(eventDate);
+
+        //     // Gestion des erreurs si le parametre eventdate était mal formé
+        //     if (eventDate == 'Invalid Date') {
+        //         console.error("Date invalide");
+        //         throw new Error("Date invalide");
+        //     }
+
+        //     let now = new Date();
+        //     let nbJours = Math.round((eventDate - now) / 1000 / 3600 / 24);
+
+        //     console.log(nbJours < 0 ? "La date est passée !" : "Evenement dans " + nbJours + " jours.");
+        // }
+
+        // try {
+        //     daysUntil("2024dsq5465-02-30");
+        //     // daysUntil("2024-03-30");
+        // } catch (error) {
+        //     console.error(error);
+        // } finally {
+        //     // Bloc qui sera exécuté qu'une erreur ait été levée ou non
+        //     console.log("toujours exécuté");
+        // }
+
+    </script>
+    </script>
+</body>
+</html>

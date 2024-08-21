@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo4</title>
+</head>
+<body>
+    <script>
+        /*
+        Créez deux Set : le premier contenant les valeurs [1, 2, 3, 4] et le second [3, 4, 5, 6].
+        Créez un nouveau Set qui contient l'intersection des deux premiers Set.
+        Affichez les valeurs du Set d'intersection.
+        */
+        const monSet = new Set();
+        monSet.add(1);
+        monSet.add(2);
+        monSet.add(3);
+        monSet.add(4);
+        const monSet2 = new Set();
+        monSet2.add(3);
+        monSet2.add(4);
+        monSet2.add(5);
+        monSet2.add(6);
+        // const monSet3 = new Set();
+        // monSet3.add(monSet);
+        // monSet3.add(monSet2);
+        let intersect = new Set([...monSet].filter(i => monSet2.has(i)));
+        console.log(...intersect)
+
+         // Méthode manuelle
+         let set1 = new Set([1, 2, 3, 4]);
+        let set2 = new Set([3, 4, 5, 6]);
+        let intersection = new Set([...set1].filter((el) => set2.has(el)));
+        console.log(intersection);
+
+        //Depuis 2024 des méthodes permettant de travailler sur les ensembles sont apparues
+        let newIntersection = set1.intersection(set2);
+        console.log(newIntersection);
+    </script>
+    </script>
+</body>
+</html>

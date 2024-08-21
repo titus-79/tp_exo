@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo4</title>
+</head>
+<body>
+    <script>
+        /*
+        Objectif : Calculer l'âge d'une personne à partir de sa date de naissance.
+
+        Créez une fonction calculateAge qui prend en paramètre une date de naissance au format YYYY-MM-DD.
+        La fonction doit retourner l'âge de la personne en années.
+        Testez la fonction avec différentes dates de naissance, par exemple "1990-08-15", "2000-01-01", et "1985-12-25".
+  
+        */
+
+        let input = window.prompt("Entrez votre date de naissance au format YYYY-MM-DD :");
+
+        function calculateAge(date) {
+            date = new Date(date);
+            dateRef = new Date();
+
+
+            let age = dateRef.getFullYear() - date.getFullYear();
+            console.log(age);
+            let mois = dateRef.getMonth() - date.getMonth();
+            console.log(mois);
+            let jour = dateRef.getDay() - date.getDay();
+            console.log(jour);
+            // age = age.getFullYear();
+            if (jour < 0) {
+                mois = mois - 1;
+            }
+            if (mois < 0) {
+                age = age - 1;
+            }
+            return age;
+
+        }
+
+        console.log("vous avez " + calculateAge(input) + " ans");
+
+        // function calculateAge(dateNaissance) {
+        //     const now = new Date();
+        //     dateNaissance = new Date(dateNaissance);
+
+        //     let age = now - dateNaissance;  //Difference en ms entre les 2 dates
+        //     age = parseInt(age / 1000 / 60 / 60 / 24 / 365.25);
+
+        //     console.log("Vous avez " + age + " ans.");
+
+        //     return age;
+        // }
+
+        // function calculateAgeV2(dateNaissance) {
+        //     const now = new Date();
+        //     dateNaissance = new Date(dateNaissance);
+        //     let age = now.getFullYear() - dateNaissance.getFullYear();
+        //     if ((now.getMonth() - dateNaissance.getMonth() < 0) || (now.getMonth() === dateNaissance.getMonth() && now.getDate() - dateNaissance.getDate() < 0)) {
+        //         age--;
+        //     }
+
+        //     console.log("Vous avez " + age + " ans.");
+
+        //     return age;
+        // }
+       
+    </script>
+    </script>
+</body>
+</html>

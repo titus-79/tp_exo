@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objet2</title>
+</head>
+<body>
+    <script>
+    //     Exercice 2 : Gestion de la collection de films
+    // Enoncé :
+    // Crée une classe Film avec les propriétés suivantes :
+    // titre : le titre du film (une chaîne de caractères).
+    // réalisateur : le réalisateur du film (une chaîne de caractères).
+    // annéeSortie : l'année de sortie du film (un nombre).
+    // genre : le genre du film (une chaîne de caractères).
+
+    // Ensuite, crée une autre classe BibliothèqueDeFilms qui contient un tableau de films. Cette classe doit avoir les méthodes suivantes :
+    // ajouterFilm(film) : ajoute un film à la collection.
+    // rechercherParGenre(genre) : retourne tous les films du genre donné.
+    // afficherTousLesFilms() : affiche tous les films avec leurs détails.
+    //    
+
+    class Film {
+        constructor(titre, realisateur, anneeSortie, genre) {
+        this.titre = titre;
+        this.realisateur = realisateur;
+        this.anneeSortie = anneeSortie;
+        this.genre = genre;
+        }
+
+    }
+
+    class BibliothèqueDeFilms {
+        constructor(){
+            this.films = new Array();
+
+        }
+
+        ajouterFilm(film) {
+            this.films.push(film);
+        }
+
+        rechercherParGenre(genre) {
+            let ret = [];
+            for (let i = 0; i < this.films; i++) {
+                if (this.films[i].genre === genre) {
+                    ret.push(this.films[i]);
+                }
+            }
+
+        }
+        
+        afficherTousLesFilms() {
+            Object.keys(this.films).forEach(function(titre, realisateur, anneeSortie, genre){
+                console.log("titre:", titre);
+                console.log("realisateur:", realisateur);
+                console.log("anneeSortie:", anneeSortie);
+                console.log("genre:", genre);
+            });
+
+        }
+    }
+     </script>
+</body>
+</html>

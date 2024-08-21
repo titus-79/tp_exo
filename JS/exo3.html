@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo3</title>
+</head>
+<body>
+    <script>
+        /*
+        Créez un Set vide.
+        Ajoutez les valeurs 1, 2, 3, 4, 5 au Set.
+        Tentez d'ajouter la valeur 3 au Set à nouveau.
+        Supprimez la valeur 2 du Set.
+        Affichez la taille du Set.
+        Affichez toutes les valeurs du Set.
+        */
+        const monSet = new Set();
+        monSet.add(1);
+        monSet.add(2);
+        monSet.add(3);
+        monSet.add(4);
+        monSet.add(5);
+        monSet.add(3);
+        monSet.delete(2);
+        console.log(monSet.size);
+        console.log(monSet);
+
+
+        let ourSet = new Set();
+        ourSet.add(1);
+        ourSet.add(2);
+        ourSet.add(3);
+        ourSet.add(4);
+        ourSet.add(5);
+
+        ourSet.add(3);
+        ourSet.delete(2);
+        console.log(ourSet.size);
+
+        ourSet.forEach(
+            (value, key, set) => console.log('value : ' + value + ' - key : ' + key)
+        );
+    </script>
+</body>
+</html>

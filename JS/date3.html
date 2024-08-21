@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo4</title>
+</head>
+<body>
+    <script>
+        /*
+        Objectif : Afficher une date dans un format spécifique.
+
+        Créez une fonction formatDate qui prend en paramètre une date sous forme de chaîne (par exemple "2024-08-21").
+        La fonction doit retourner la date formatée de la manière suivante : "Wednesday 21 August 2024".
+        Testez la fonction avec plusieurs dates.  
+        */
+
+        let input = window.prompt("Entrez une date YYYY-MM-DD :");
+
+        function formatDate(date) {
+            date = new Date(date);
+           
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August","September", "October", "November", "December"];
+
+            let jour = days[date.getDay()];
+            let nbjour = date.getDate();
+            let mois = months[date.getMonth()];
+            let annee = date.getFullYear();
+
+            return `${jour} ${nbjour} ${mois} ${annee}`;
+            
+        }
+
+        console.log(...formatDate(input));
+
+        // function formatDate(strDate) {
+        //     let date = new Date(strDate);
+        //     const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+        //     const months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
+        //     console.log(days[date.getDay()] + " " + date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear());
+        //     date.getFullYear();
+        //     date.getDate();
+        //     date.getDay();  // Chiffre entre 0 et 6. Dimanche => 0, samedi => 6
+        //     date.getMonth(); // Chiffre entre 0 et 11. 0=>Janvier
+        // }
+
+    </script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objet1</title>
+</head>
+<body>
+    <script>
+        // Crée une classe Livre avec les propriétés suivantes :
+        // titre : le titre du livre (une chaîne de caractères).
+        // auteur : l'auteur du livre (une chaîne de caractères).
+        // annéePublication : l'année de publication du livre (un nombre).
+
+        // Ensuite, ajoute une méthode getDescription() qui renvoie une chaîne de caractères décrivant le livre, par exemple : "Le livre 'Le Petit Prince' a été écrit par Antoine de Saint-Exupéry en 1943."
+
+        class Livre {
+            constructor(titre, auteur, annéePublication) {
+                this.titre = titre;
+                this.auteur = auteur;
+                this.annéePublication = annéePublication;
+            }
+        getDescription() {
+            console.log( "Le livre " + this.titre + " a été écrit par " + this.auteur +" en "  + this.annéePublication);
+            console.log( `Le livre ${this.titre} a été écrit par ${this.auteur} en ${this.annéePublication}`);
+
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
