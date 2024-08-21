@@ -48,9 +48,10 @@
                     ret.push(this.films[i]);
                 }
             }
+            return ret;
 
         }
-        
+
         afficherTousLesFilms() {
             Object.keys(this.films).forEach(function(titre, realisateur, anneeSortie, genre){
                 console.log("titre:", titre);
