@@ -62,6 +62,94 @@
 
         }
     }
+
+    class Movie {
+            constructor(title, director, year, genre) {
+                this.title = title;
+                this.director = director;
+                this.year = year;
+                this.genre = genre;
+
+            }
+
+            getDescription() {
+                console.log("Le film '" + this.title + "' est un film de " + this.genre + ".Il a été réalisé par " + this.director + " en " + this.year + ".");
+            }
+
+        }
+
+        // class MovieLibrary {
+        //     constructor() {
+        //         this.movies = [];
+
+        //         // On aurait pu utiliser une structure Set si on décide qu'on aura max 1 exemplaire de chaque film
+        //         // this.movies = new Set();    
+        //         // Ou une structure Map qui permettrait de stocker le film (clé) et la quantité (valeur)
+        //         // this.movies = new Map();
+        //     }
+
+        //     addMovie(movie) {
+        //         this.movies.push(movie);
+
+        //         return this;
+        //     }
+
+        //     searchByGenre(genre) {
+        //         let moviesByGenre = [];
+        //         for (let i = 0; i < this.movies.length; i++) {
+        //             if (this.movies[i].genre === genre) {
+        //                 moviesByGenre.push(this.movies[i]);
+        //             }
+        //         }
+
+        //         return moviesByGenre;
+        //     }
+
+        //     searchByGenreV2(genre) {
+        //         return this.movies.filter(function (movie) {
+        //             return movie.genre === genre;
+        //         });
+        //         // return this.movies.filter((movie) => movie.genre === genre);
+        //     }
+
+        //     displayMovies() {
+        //         for (let i = 0; i < this.movies.length; i++) {
+        //             this.movies[i].getDescription();
+        //         }
+        //     }
+        // }
+
+        // let alien = new Movie("alien", "Ridley Scott", "1979", "horror");
+        // let alien2 = new Movie("aliens", "James Cameron", "1986", "horror");
+        // let alien3 = new Movie("alien 3", "David Fincher", "1992", "horror");
+        // let alien4 = new Movie("alien, la résurrection", "Jean-Pierre Jeunet", "1997", "horror");
+        // let bladeRunner = new Movie("Blade Runner", "Ridley Scott", "1982", "science-fiction");
+        // let terminator = new Movie("Terminator", "James Cameron", "1984", "science-iction");
+        // let terminator2 = new Movie("Terminator 2", "James Cameron", "1991", "science-fiction");
+
+        // let library = new MovieLibrary();
+
+
+        // //On peut utiliser les setters "fluent" car on return "this" dans la méthde addMovie
+        // library
+        //     .addMovie(new Movie("alien", "Ridley Scott", "1979", "horror"))
+        //     .addMovie(new Movie("aliens", "James Cameron", "1986", "horror"))
+        //     .addMovie(new Movie("alien 3", "David Fincher", "1992", "horror"))
+        //     .addMovie(new Movie("alien, la résurrection", "Jean-Pierre Jeunet", "1997", "horror"))
+        //     .addMovie(new Movie("Blade Runner", "Ridley Scott", "1982", "science-fiction"))
+        //     .addMovie(new Movie("Terminator", "James Cameron", "1984", "science-iction"))
+        //     .addMovie(new Movie("Terminator 2", "James Cameron", "1991", "science-fiction"));
+
+
+        // // console.table(library.searchByGenre('horror'));
+        // console.table(library.searchByGenreV2('horror'));
+
+        // // console.table(library.searchByGenre('science-fiction'));
+        // console.table(library.searchByGenreV2('science-fiction'));
+
+        // library.displayMovies();
+
+
      </script>
 </body>
 </html>
