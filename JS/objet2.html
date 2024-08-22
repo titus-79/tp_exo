@@ -29,6 +29,10 @@
         this.genre = genre;
         }
 
+        getDescription() {
+        console.log("Le film '" + this.titre + "' est un film de " + this.genre + ".Il a été réalisé par " + this.realisateur + " en " + this.anneeSortie + ".");
+        }
+
     }
 
     class BibliothèqueDeFilms {
@@ -39,44 +43,87 @@
 
         ajouterFilm(film) {
             this.films.push(film);
+
+            return this;
         }
 
         rechercherParGenre(genre) {
-            let ret = [];
-            for (let i = 0; i < this.films; i++) {
-                if (this.films[i].genre === genre) {
-                    ret.push(this.films[i]);
-                }
-            }
-            return ret;
+            // let ret = [];
+            // for (let i = 0; i < this.films; i++) {
+            //     if (this.films[i].genre === genre) {
+            //         ret.push(this.films[i]);
+            //     }
+            // }
+            // return ret;
+
+            return this.films.filter((film) => film.genre === genre);
 
         }
 
         afficherTousLesFilms() {
-            Object.keys(this.films).forEach(function(titre, realisateur, anneeSortie, genre){
-                console.log("titre:", titre);
-                console.log("realisateur:", realisateur);
-                console.log("anneeSortie:", anneeSortie);
-                console.log("genre:", genre);
-            });
+            // Object.keys(this.films).forEach(function(titre, realisateur, anneeSortie, genre){
+            //     console.log("titre:", titre);
+            //     console.log("realisateur:", realisateur);
+            //     console.log("anneeSortie:", anneeSortie);
+            //     console.log("genre:", genre);
+
+            for (let i = 0; i < this.films.length; i++) {
+                this.films[i].getDescription();
+                };
+
+            // this.films.forEach(film => film.getDescription());
 
         }
     }
 
-    class Movie {
-            constructor(title, director, year, genre) {
-                this.title = title;
-                this.director = director;
-                this.year = year;
-                this.genre = genre;
+    let alien = new Film("alien", "Ridley Scott", 1979, "horror");
+    let alien2 = new Film("aliens", "James Cameron", 1986, "horror");
+    let alien3 = new Film("alien 3", "David Fincher", 1992, "horror");
+    let alien4 = new Film("alien, la résurrection", "Jean-Pierre Jeunet", 1997, "horror");
+    let bladeRunner = new Film("Blade Runner", "Ridley Scott", 1982, "science-fiction");
+    let terminator = new Film("Terminator", "James Cameron", 1984, "science-iction");
+    let terminator2 = new Film("Terminator 2", "James Cameron", 1991, "science-fiction");
 
-            }
+    let library = new BibliothèqueDeFilms();
+        // .ajouterFilm(new Film("alien", "Ridley Scott", "1979", "horror"))
+        // .ajouterFilm(new Film("aliens", "James Cameron", "1986", "horror"))
+        // .ajouterFilm(new Film("alien 3", "David Fincher", "1992", "horror"))
+        // .ajouterFilm(new Film("alien, la résurrection", "Jean-Pierre Jeunet", "1997", "horror"))
+        // .ajouterFilm(new Film("Blade Runner", "Ridley Scott", "1982", "science-fiction"))
+        // .ajouterFilm(new Film("Terminator", "James Cameron", "1984", "science-iction"))
+        // .ajouterFilm(new Film("Terminator 2", "James Cameron", "1991", "science-fiction"));
+        library
+        .ajouterFilm(alien)
+        .ajouterFilm(alien2)
+        .ajouterFilm(alien3)
+        .ajouterFilm(alien4)
+        .ajouterFilm(bladeRunner)
+        .ajouterFilm(terminator)
+        .ajouterFilm(terminator2);
 
-            getDescription() {
-                console.log("Le film '" + this.title + "' est un film de " + this.genre + ".Il a été réalisé par " + this.director + " en " + this.year + ".");
-            }
+    
+    console.table(library.rechercherParGenre('horror'));
 
-        }
+    console.table(library.rechercherParGenre('science-fiction'));
+    
+
+    library.afficherTousLesFilms();
+
+
+    // class Movie {
+    //         constructor(title, director, year, genre) {
+    //             this.title = title;
+    //             this.director = director;
+    //             this.year = year;
+    //             this.genre = genre;
+
+    //         }
+
+    //         getDescription() {
+    //             console.log("Le film '" + this.title + "' est un film de " + this.genre + ".Il a été réalisé par " + this.director + " en " + this.year + ".");
+    //         }
+
+    //     }
 
         // class MovieLibrary {
         //     constructor() {

@@ -20,14 +20,18 @@
 
         class Personne {
             constructor(nom, priorite) {
-                this.nom;
-                this.priorite;
+                this.nom = nom;
+                this.priorite = priorite;
+            }
+
+            getDescription() {
+                console.log(`Nom : ${this.nom} - Priorité : ${this.priorite}`);
             }
         }
 
         class PersonneVIP extends Personne {
             constructor(nom) {
-                super(nom, 0);
+                super(nom, -Infinity);
             }
             
         }
@@ -40,8 +44,12 @@
             ajouterPersonne(personne) {
                 
                 this.fileAttente.push(personne);
-                // objs.sort((a, b) => a.last_nom.localeCompare(b.last_nom));
-                this.fileAttente.sort((a, b) => a.priorite.localeCompare(b.priorite));
+                // this.fileAttente.sort((p1, p2) => p1.priorite - p2.priorite);
+                this.fileAttente.sort(function(p1, p2) {
+                    return p1.priorite - p2.priorite;
+                });
+
+                return this;
 
             }
             passerAuSuivant() {
@@ -49,9 +57,32 @@
 
             }
             afficherFile() {
+                console.log("-----------------------------------------------------------");
+                // for(let i = 0; i < this.fileAttente.length; i++) {
+                //     this.fileAttente[i].getDescription();
+                // }
+                this.fileAttente.forEach(personne => personne.getDescription());
+                console.log("-----------------------------------------------------------");
 
             }
         }
+
+        let file = new FileAttente();
+
+        file
+            .ajouterPersonne(new Personne("Fabien", 2))
+            .ajouterPersonne(new Personne("Alex", 2))
+            .ajouterPersonne(new Personne("Yannick", 3))
+            .ajouterPersonne(new Personne("Rodolphe", 1))
+            .ajouterPersonne(new PersonneVIP("Jean Castex",5));
+
+        file.afficherFile();
+        file.passerAuSuivant();
+        file.afficherFile();
+        file.passerAuSuivant();
+        file.afficherFile();
+        file.passerAuSuivant();
+        file.afficherFile();
 
         // class Personne {
         //     constructor(name, priority) {

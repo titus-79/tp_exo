@@ -20,12 +20,17 @@
                 this.auteur = auteur;
                 this.annéePublication = annéePublication;
             }
-        getDescription() {
-            console.log( "Le livre " + this.titre + " a été écrit par " + this.auteur +" en "  + this.annéePublication);
-            console.log( `Le livre ${this.titre} a été écrit par ${this.auteur} en ${this.annéePublication}`);
+            getDescription() {
+                // console.log( "Le livre " + this.titre + " a été écrit par " + this.auteur +" en "  + this.annéePublication);
+                console.log( `Le livre ${this.titre} a été écrit par ${this.auteur} en ${this.annéePublication}`);
 
-            }
+                }
         }
+
+        let badBook = new Livre(123, 'jk', 123);
+        let goodBook = new Livre("Le Petit Prince", "Antoine de Saint-Exupéry", 1943);
+        badBook.getDescription();
+        goodBook.getDescription();
 
         // class Book {
         //     constructor(title, author, publicationYear) {
