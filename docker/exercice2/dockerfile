@@ -1,0 +1,16 @@
+FROM httpd:2.4-bookworm
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get install -y git nano curl
+# RUN  apt-get update \
+# && apt-get install -y git\
+# && rm -rf /var/lib/apt/lists/*
+# # RUN apt-get -y install nano
+# RUN apt-get update && \
+#     apt-get install -y nano && \
+#     rm -fr /var/lib/apt/lists/*
+WORKDIR /usr/local/apache2/htdocs
+RUN mkdir css
+RUN rm index.html
+RUN curl -o index.html  http://www.kirschpm.fr/cours/M1Gestion/pages/coursCSS-4.html
+RUN curl -o css/monstyle.css http://www.kirschpm.fr/cours/M1Gestion/pages/css/monstyle.css

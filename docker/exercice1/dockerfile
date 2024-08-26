@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get install -y curl
+# WORKDIR /exercice1
+# RUN add-apt-repository ppa:git-core/ppa
+# RUN apt-get update && sudo apt-get -y install git
+RUN  apt-get update \
+&& apt-get install -y git\
+&& rm -rf /var/lib/apt/lists/*
+# RUN apt-get -y install nano
+RUN apt-get update && \
+    apt-get install -y nano && \
+    rm -fr /var/lib/apt/lists/*
+

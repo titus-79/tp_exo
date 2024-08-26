@@ -1,0 +1,28 @@
+# version: '1' # Version de Docker Compose
+
+services: # Définition des services
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: password
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 9003:80
+    environment:
+      - PMA_ARBITRARY=1
+
+  apache:
+    image: httpd:2.4
+    restart: always
+    ports: 80:80
+
+volumes: # Définition des volumes
+  dbdata:
+  binded: /usr/local/apache2/htdocs : 
+
+networks: # Définition des réseaux
+  mynetwork:
