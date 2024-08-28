@@ -1,0 +1,6 @@
+FROM php:7.2-apache
+# COPY src/ /var/www/html/
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get install -y git nano curl
+WORKDIR /usr/local/apache2/htdocs
