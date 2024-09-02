@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event7</title>
+    <style>
+       div {
+            width: 400px;
+            height: 200px;
+            border: 2px solid blue
+
+        }
+    </style>
+</head>
+<body>
+    
+       <div></div><br>
+       <span></span>
+   
+
+    <script>
+        let conteneur = document.querySelector("div");
+        let pos = document.querySelector("span");
+
+        conteneur.addEventListener("mousemove", (event) => {
+            let x = event.clientX;
+            let y = event.clientY;
+            let coord = "position de la souris :" + x + "," + y;
+            pos.textContent = coord;
+  
+});
+
+    </script>
+</body>
+</html>

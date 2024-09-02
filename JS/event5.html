@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event5</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue
+
+        }
+    </style>
+</head>
+<body>
+   <div id="div"></div>
+
+    <script>
+
+        let boite = document.getElementById("div");
+
+        boite.addEventListener("mouseover", function (event){
+            event.target.style.backgroundColor = "red";
+            console.log(event);
+            // setTimeout(function () {
+            //     event.target.style.backgroundColor = "";
+            // }, 1000);
+        },
+        false,
+    );
+
+    boite.addEventListener("mouseout", function (event){
+            event.target.style.backgroundColor = "";
+            console.log(event);
+            // setTimeout(function () {
+            //     event.target.style.backgroundColor = "";
+            // }, 1000);
+        },
+        false,
+    );
+  
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fonction2</title>
+</head>
+<body>
+    <script>
+        /* fonction ordinaire*/
+        function bonjour(nom) {
+            alert("bonjour"+ nom);
+        }
+        bonjour("toto");
+
+        /*fonction fléché*/
+        let salut = (nom) => alert("salut" + nom);
+
+        // let arr =[5,4,3,2,1];
+        // arr.sort((a,b) => a - b);
+
+
+        /*fonction annonyme*/
+        let coucou = function(nom) {
+            alert("coucou"+ nom);
+        };
+
+
+    </script>
+</body>
+</html>

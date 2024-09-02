@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event6</title>
+    <style>
+        p {
+            display:none;
+        }
+
+        .visible {
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+        <button>bouton</button>
+        <p> un secret</p>
+   
+
+    <script>
+        let btn = document.querySelector("button");
+        let par = document.querySelector("p");
+
+        btn.addEventListener("dblclick", function (event) {
+            console.log(event);
+            par.classList.toggle("visible");
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event3</title>
+</head>
+<body>
+    <button>Press Me</button>
+    <span>0</span>
+
+    <script>
+        let btn = document.querySelector("button");
+        let counter = document.querySelector("span");
+
+        // function conca() {
+        //     counter++;
+        //     document.span.textContent = counter;
+        // }
+
+        function conca() {
+            let count = parseInt(counter.textContent);
+            count++;
+            counter.textContent = count;
+        }
+
+        btn.onclick = conca;
+      
+    </script>
+</body>
+</html>

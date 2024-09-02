@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evenement</title>
+</head>
+<body>
+    <button>Change color</button>
+
+    <!-- boutton avec code JS dans html -->
+     <!-- <button onclick="bgChange()">Press me</button> -->
+
+    <!-- <button onclick="alert('Hello, this is my old-fashioned event handler!');">Press me</button> -->
+
+    <script>
+        var btn = document.querySelector("button");
+
+        function random(number) {
+            return Math.floor(Math.random() * (number + 1));
+        }
+
+        // btn.onclick = function () {
+        //     var rndCol =
+        //     "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+        //     document.body.style.background = rndCol;
+        // };
+
+        // function bgChange() {
+        //     var rndCol =
+        //     "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+        //     document.body.style.backgroundColor = rndCol;
+        // }
+
+        // btn.onclick = bgChange;
+        // btn.onfocus = bgChange;
+        // btn.onblur = bgChange;
+        // btn.ondbclick = bgChange;
+        // btn.onmouseover = bgChange;
+        // btn.onmouseout = bgChange;
+        // window.onkeypress = bgChange; ====> Depressier
+        // window.onkeydown = bgChange;
+        // window.onkeyup = bgChange;
+
+        // var buttons = document.querySelectorAll("button");
+
+        // for (var i = 0; i < buttons.length; i++) {
+        // buttons[i].onclick = bgChange;
+        // }
+
+        
+
+        // Utilisation de la méthode addEventListener
+
+        // btn.addEventListener("click", function () {
+        //     var rndCol =
+        //         "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+        //     document.body.style.backgroundColor = rndCol;
+        // });
+        // btn.removeEventListener("click", bgChange);
+
+
+        function bgChange(e) {
+            var rndCol =
+                "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+            e.target.style.backgroundColor = rndCol;
+            console.log(e);
+            }
+
+        btn.addEventListener("click", bgChange);
+
+        /*let body = document.body.querySelector;
+        body..addEventListener("click", bgChange);*/
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event2</title>
+</head>
+<body>
+    <button>Changer la couleur</button>
+    <script>
+        let btn = document.querySelector("button");
+        
+        btn.addEventListener("click", function (e) {
+           
+            e.target.style.backgroundColor = "rgb(255,0,0)" ;
+        });
+
+        // function bgChange(e) {
+          
+        //     e.target.style.backgroundColor = "rgb(255,0,0)";
+        //     console.log(e);
+        //     }
+
+        // btn.addEventListener("click", bgChange);
+    </script>
+</body>
+</html>
