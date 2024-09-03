@@ -15,8 +15,8 @@
 </head>
 <body>
     
-       <div></div><br>
-       <span></span>
+       <div><span></span></div><br>
+       
    
 
     <script>
@@ -26,7 +26,7 @@
         conteneur.addEventListener("mousemove", (event) => {
             let x = event.clientX;
             let y = event.clientY;
-            let coord = "position de la souris :" + x + "," + y;
+            let coord = "position de la souris : X = " + x + " , Y = " + y;
             pos.textContent = coord;
   
 });
